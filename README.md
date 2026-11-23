@@ -4,7 +4,7 @@ This lab introduces you to a new data structure: graphs. Graphs are a fundamenta
 
 **Instructions:** To complete this lab, you may work in groups, but you must write your solutions yourself. Complete all of the exercises below. Once you have completed the lab, push your changes to your forked repository.
 
-Your name: ___________________________
+Your name: __________Rivan_________________
 
 ## Introduction to Graphs
 
@@ -23,11 +23,11 @@ For the following graph, list the vertices and edges. What is the size of the gr
 
 ![ex1](images/ex1.png)
 
-- **Vertices**: 
+- **Vertices**: $\{0,1,2,3,4\}$
 
-- **Edges**: 
+- **Edges**: $\{(0,1),(0,2),(0,3),(1,2),(3,4)\}$
 
-- **Size**:
+- **Size**: $n=5$ vertices and $m=5$ edges.
 
 
 ## Paths and Distances
@@ -46,25 +46,35 @@ The graph below shows the state of the internet in 1970s. Vertices represent com
 1. Find a path from RAND to SRI. What is the distance between these two vertices?
 
 - **Path**:
+  RAND, UCLA, SRI
 
 - **Distance**:
+  2
 
 2. Find a path from RAND to MIT. What is the distance between these two vertices?
 
 - **Path**:
+  RAND, BBN, MIT
 
 - **Distance**:
+  2
 
 3. Classify each of the following paths as simple, not simple, or a cycle. State your reasoning!
 
 - **Path 1**: LINC, MIT, LINC, CASE
 - **Classification**:
+  Not simple. LINC appears twice, so not all vertices are distinct. It is
+  not a cycle because the first and last vertices are different.
 
 - **Path 2**: UCSB, SRI, STAN, UCLA, UCSB
 - **Classification**:
+  A cycle. The first and last vertices are the same, all other vertices are
+  distinct, and each consecutive pair is connected by an edge.
 
 - **Path 3**: UCSB, SRI, UTAH
 - **Classification**:
+  Simple. All three vertices are distinct, and the first and last vertices
+  are different, so it is not a cycle.
 
 ## Connectivity and Trees
 
@@ -77,6 +87,15 @@ Think through these with your partner(s) before answering the questions below. I
 
 1. A connected graph is defined as a graph with paths between every pair of vertices. If a graph with 10 vertices has exactly 8 edges, is it possible for the graph to be connected? Explain your reasoning based on the minimum number of edges required to link all vertices.
 
+   No. A connected graph with $n$ vertices needs at least $n-1$ edges:
+   one edge is needed to connect each additional vertex to the already
+   connected portion of the graph. Therefore, 10 vertices require at least
+   $10-1=9$ edges, and a graph with only 8 edges cannot be connected.
 
 
 2. A tree is a connected graph with no cycles. If you take an existing tree and add exactly one new edge between two non-adjacent vertices, what structural property is immediately violated?
+
+   The no-cycles property is violated. In a tree, there is already a unique
+   path between any two vertices. Adding an edge between two non-adjacent
+   vertices creates a second route between them, which forms a cycle. The
+   graph remains connected, but it is no longer a tree.
